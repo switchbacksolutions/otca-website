@@ -1,4 +1,4 @@
-# CLAUDE.md — AI Agent Guide for astro-template
+# CLAUDE.md — AI Agent Guide for OTCA Website
 
 This file is the authoritative reference for AI agents (Claude, Copilot, etc.)
 working on this codebase. Read it before writing any code.
@@ -7,7 +7,12 @@ working on this codebase. Read it before writing any code.
 
 ## Project overview
 
-A production-ready Astro.js blog template. Key characteristics:
+The website for the **Open Trails Community Alliance (OTCA)**, a volunteer-led
+organization working to preserve and protect trail access in Meadow Vista, CA.
+The site publishes community updates, rally support, and links to the email list,
+GoFundMe, and Facebook page.
+
+Built on Astro.js. Key characteristics:
 
 - **Static output** — no server runtime; every page is pre-rendered HTML
 - **Zero client JS by default** — only the dark-mode toggle script ships JS

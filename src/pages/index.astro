@@ -1,10 +1,4 @@
 ---
-/**
- * src/pages/index.astro — Home page
- *
- * Shows a hero section and the three most recent published blog posts.
- */
-
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
@@ -16,109 +10,198 @@ const recentPosts = allPosts
 ---
 
 <BaseLayout
-  title="Astro Template"
-  description="A production-ready Astro blog template with Tailwind CSS, MDX, and CloudCannon CMS support."
+  title="Open Trails Community Alliance"
+  description="Preserving access to Meadow Vista's trails. Hundreds of residents use the Bear River Canal trail system weekly. Help us keep it open."
 >
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-50 to-white dark:from-gray-900 dark:to-gray-950">
-    <div class="mx-auto max-w-4xl px-4 py-24 sm:px-6 text-center">
-      <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white text-balance">
-        Welcome to<br />
-        <span class="text-brand-600 dark:text-brand-400">Astro Template</span>
-      </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400 text-pretty">
-        A production-ready starter with Astro, Tailwind CSS, MDX, content
-        collections, CloudCannon CMS integration, and Netlify deployment.
-      </p>
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/blog" class="btn-primary">
-          Read the blog
-        </a>
-        <a href="/about" class="btn-secondary">
-          About this template
-        </a>
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-24">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <!-- Text -->
+        <div>
+          <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white text-balance">
+            Preserving Access to
+            <span class="text-brand-600 dark:text-brand-400"> Meadow Vista's Trails</span>
+          </h1>
+          <p class="mt-6 text-xl text-gray-600 dark:text-gray-400 text-pretty">
+            Hundreds of residents use the Bear River Canal trails every week. We're working
+            with property owners, county officials, and the community to reopen closed trails
+            and protect the foothills lifestyle we all love.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://eepurl.com" class="btn-primary" target="_blank" rel="noopener noreferrer">
+              Subscribe to Updates
+            </a>
+            <a href="/blog" class="btn-secondary">
+              Read Latest Update
+            </a>
+          </div>
+        </div>
+
+        <!-- Photo -->
+        <div class="relative">
+          <img
+            src="/images/canal-trail.jpg"
+            alt="Bear River Canal trail in Meadow Vista"
+            class="w-full rounded-2xl object-cover shadow-xl"
+            style="aspect-ratio: 4/3;"
+            width="800"
+            height="600"
+            loading="eager"
+          />
+          <!-- Decorative accent -->
+          <div class="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl bg-brand-100 dark:bg-brand-900/30"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Recent posts -->
-  {recentPosts.length > 0 && (
-    <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-      <div class="flex items-baseline justify-between mb-8">
+  <!-- What trails are closed -->
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <div class="grid gap-12 md:grid-cols-2">
+      <div>
         <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
-          Recent Posts
+          Wait, What Trails Are Closed?
         </h2>
-        <a
-          href="/blog"
-          class="text-sm font-medium text-brand-600 no-underline hover:underline dark:text-brand-400"
-        >
-          View all →
-        </a>
+        <div class="prose-content mt-4">
+          <p>
+            The Bear River Canal trail system has been part of Meadow Vista community life since
+            the 1940s. It stretches from Crother Road (below the Waldorf school) to Placer Hills
+            Road near the Winchester entrance.
+          </p>
+          <p>
+            Recently, property owners installed gate sets that block access between Meadow Gate
+            and Placer Hills Road — cutting off a beloved stretch of trail that residents have
+            walked, jogged, and ridden for generations.
+          </p>
+        </div>
       </div>
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+          Why Do the Trails Matter?
+        </h2>
+        <div class="prose-content mt-4">
+          <p>
+            Trail access isn't just about recreation — it supports physical and mental health,
+            builds social connection, and makes Meadow Vista the kind of community people
+            choose to live in.
+          </p>
+          <p>
+            Research consistently shows that access to trails improves health outcomes,
+            increases property values, and provides safe outdoor recreation for people
+            of all ages. These trails are part of what makes our community special.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0">
-        {recentPosts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}`} class="group block card h-full no-underline">
-              {post.data.heroImage && (
-                <img
-                  src={post.data.heroImage}
-                  alt={post.data.title}
-                  class="mb-4 h-40 w-full rounded-lg object-cover"
-                  loading="lazy"
-                  width={600}
-                  height={315}
-                />
-              )}
+  <!-- Recent updates -->
+  {recentPosts.length > 0 && (
+    <section class="bg-gray-50 dark:bg-gray-900">
+      <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+        <div class="flex items-baseline justify-between mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+            Latest Updates
+          </h2>
+          <a
+            href="/blog"
+            class="text-sm font-medium text-brand-600 no-underline hover:underline dark:text-brand-400"
+          >
+            View all →
+          </a>
+        </div>
 
-              {post.data.tags.length > 0 && (
-                <div class="mb-2 flex flex-wrap gap-1">
-                  {post.data.tags.slice(0, 2).map((tag) => (
-                    <span class="tag-pill">{tag}</span>
-                  ))}
-                </div>
-              )}
+        <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0">
+          {recentPosts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}`} class="group block card h-full no-underline">
+                {post.data.tags.length > 0 && (
+                  <div class="mb-2 flex flex-wrap gap-1">
+                    {post.data.tags.slice(0, 2).map((tag) => (
+                      <span class="tag-pill">{tag}</span>
+                    ))}
+                  </div>
+                )}
 
-              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400 transition-colors text-balance">
-                {post.data.title}
-              </h3>
+                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400 transition-colors text-balance">
+                  {post.data.title}
+                </h3>
 
-              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
-                {post.data.description}
-              </p>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+                  {post.data.description}
+                </p>
 
-              <p class="mt-4 text-xs">
-                <FormattedDate date={post.data.pubDate} format="short" />
-              </p>
-            </a>
-          </li>
-        ))}
-      </ul>
+                <p class="mt-4 text-xs text-gray-400 dark:text-gray-500">
+                  <FormattedDate date={post.data.pubDate} format="short" />
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )}
 
-  <!-- Feature highlights -->
-  <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-      <h2 class="mb-10 text-center text-2xl font-semibold text-gray-900 dark:text-white">
-        What's included
-      </h2>
-      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0">
-        {[
-          { emoji: '⚡', title: 'Astro + TypeScript', desc: 'Zero-JS by default with full type safety.' },
-          { emoji: '🎨', title: 'Tailwind CSS', desc: 'Utility-first styling with dark mode support.' },
-          { emoji: '📝', title: 'MDX Blog', desc: 'Write posts in Markdown with JSX components.' },
-          { emoji: '🗺️', title: 'Sitemap & RSS', desc: 'Auto-generated sitemap.xml and RSS feed.' },
-          { emoji: '🔒', title: 'Security Headers', desc: 'Production-ready headers via Netlify.' },
-          { emoji: '🧪', title: 'Testing', desc: 'Vitest unit tests + Playwright E2E tests.' },
-        ].map(({ emoji, title, desc }) => (
-          <li class="card">
-            <p class="text-3xl mb-3" aria-hidden="true">{emoji}</p>
-            <h3 class="font-semibold text-gray-900 dark:text-white">{title}</h3>
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">{desc}</p>
-          </li>
-        ))}
-      </ul>
+  <!-- Get involved -->
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 text-center">
+    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+      Get Involved
+    </h2>
+    <p class="mx-auto mt-4 max-w-xl text-gray-600 dark:text-gray-400">
+      The Open Trails Community Alliance is run by neighbors, for neighbors.
+      Here's how you can help us restore and protect trail access.
+    </p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-3">
+      {[
+        {
+          title: 'Stay Informed',
+          desc: 'Subscribe to our email list for updates on trail status, meetings, and actions you can take.',
+          action: 'Subscribe',
+          href: 'https://eepurl.com',
+          external: true,
+        },
+        {
+          title: 'Donate',
+          desc: 'Support our outreach, legal guidance, and community organizing through our GoFundMe campaign.',
+          action: 'Donate Now',
+          href: 'https://www.gofundme.com',
+          external: true,
+        },
+        {
+          title: 'Spread the Word',
+          desc: 'Follow us on Facebook and share our updates with friends and neighbors in the community.',
+          action: 'Follow on Facebook',
+          href: 'https://www.facebook.com/opentrailsca',
+          external: true,
+        },
+      ].map(({ title, desc, action, href, external }) => (
+        <div class="card flex flex-col">
+          <h3 class="font-semibold text-gray-900 dark:text-white">{title}</h3>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 flex-1">{desc}</p>
+          <a
+            href={href}
+            class="btn-secondary mt-4 text-sm"
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener noreferrer' : undefined}
+          >
+            {action}
+          </a>
+        </div>
+      ))}
     </div>
   </section>
+
+  <!-- Trail photo -->
+  <div class="mx-auto max-w-4xl px-4 pb-16 sm:px-6">
+    <img
+      src="/images/trail-nature.jpg"
+      alt="Foothills trail in Meadow Vista"
+      class="w-full rounded-2xl object-cover shadow-md"
+      style="max-height: 320px;"
+      width="1200"
+      height="320"
+      loading="lazy"
+    />
+  </div>
 </BaseLayout>

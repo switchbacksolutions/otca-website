@@ -1,13 +1,16 @@
-# Astro Template
+# Open Trails Community Alliance (OTCA) Website
 
-A production-ready Astro.js blog template with TypeScript, Tailwind CSS, MDX,
-content collections, CloudCannon CMS integration, and Netlify deployment.
+The website for the Open Trails Community Alliance — a volunteer-led organization
+working to preserve and protect trail access in Meadow Vista, CA. The site publishes
+community updates and links residents to the email list, GoFundMe, and Facebook page.
+
+Built with Astro.js, Tailwind CSS, and CloudCannon CMS. Deployed on Netlify.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/your-org/astro-template.git my-site
-cd my-site
+git clone <repo-url> otca-site
+cd otca-site
 npm install
 npm run dev
 ```
@@ -44,7 +47,7 @@ npm run test:all    # Run unit + E2E tests
 ```
 src/
   components/     # Reusable Astro components
-  content/blog/   # Markdown / MDX blog posts
+  content/blog/   # Markdown / MDX blog posts (community updates)
   layouts/        # Page shell layouts
   pages/          # File-based routes
   styles/         # Global CSS + Tailwind layers
@@ -56,18 +59,18 @@ docs/
   DEPLOYMENT.md   # Deployment guide
 ```
 
-## Adding a blog post
+## Adding a blog post (community update)
 
 Create a new `.md` or `.mdx` file in `src/content/blog/`:
 
 ```markdown
 ---
-title: 'My New Post'
+title: 'My Update Title'
 description: 'A short description for SEO.'
 pubDate: '2024-03-01'
 tags:
-  - astro
-  - tutorial
+  - trails
+  - update
 draft: false
 ---
 
@@ -76,12 +79,8 @@ Post content goes here.
 
 ## Deployment
 
-Connect the repository to [Netlify](https://netlify.com). The `netlify.toml`
-configures the build command, publish directory, Node version, security
-headers, and caching rules automatically.
+Connected to [Netlify](https://netlify.com). The `netlify.toml` configures the
+build command, publish directory, Node version, security headers, and caching
+rules automatically.
 
 See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for full instructions.
-
-## License
-
-MIT

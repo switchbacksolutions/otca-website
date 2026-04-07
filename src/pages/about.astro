@@ -1,90 +1,76 @@
 ---
-/**
- * src/pages/about.astro — About page
- */
-
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="About"
-  description="Learn more about this Astro template — what's included and how to use it."
+  title="About Us — Open Trails Community Alliance"
+  description="The Open Trails Community Alliance works to preserve and protect trail systems and open spaces in Meadow Vista and the surrounding community."
 >
   <main class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-    <h1 class="text-4xl font-bold text-gray-900 dark:text-white">About</h1>
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-white">About Us</h1>
 
     <div class="prose-content mt-8">
       <p>
-        This is a production-ready Astro template designed to give you a
-        solid foundation for content-driven websites, personal blogs, and
-        documentation sites.
+        The <strong>Open Trails Community Alliance (OTCA)</strong> is a volunteer-led organization
+        whose goal is to foster a cooperative and communicative environment to preserve and protect
+        the existing trail systems and open spaces in Meadow Vista and the surrounding community.
       </p>
 
-      <h2>Technology Stack</h2>
+      <h2>Our Mission</h2>
+      <p>
+        We promote unrestricted use of community trails for Meadow Vista and the surrounding
+        community. We do this by raising awareness, building relationships with landowners and
+        local government, and organizing residents to speak with a unified voice.
+      </p>
+
+      <h2>What We Do</h2>
+      <ul>
+        <li>Raise awareness about trails facing potential restrictions or closures</li>
+        <li>Work to reopen trails that have already been restricted or closed</li>
+        <li>Meet directly with landowners to pursue cooperative solutions</li>
+        <li>Build community support for permanent trail access</li>
+        <li>Coordinate with local government, community organizations, and utility companies</li>
+      </ul>
+
+      <h2>Our History</h2>
+      <p>
+        The Open Trails Community Alliance began in fall 2020 when concerned Meadow Vista
+        residents started meeting to discuss recent trail restrictions. Our initial focus was
+        the Bear River Canal trail between Placer Hills Road and Meadow Gate Road, where
+        property owners installed two sets of gates blocking access to a trail corridor that
+        had been in community use since the 1940s.
+      </p>
+      <p>
+        From those early conversations, we built an organization. We started holding biweekly
+        meetings, created this website and a Facebook page, began meeting with landowners and
+        county officials, and grew into a recognized community voice for trail access.
+      </p>
+
+      <h2>Get Involved</h2>
+      <p>
+        We are always looking for neighbors who care about the trails and want to help.
+        Here are a few ways to support our work:
+      </p>
       <ul>
         <li>
-          <strong>Astro</strong> — Static site generator with island
-          architecture and zero-JS by default.
+          <a href="https://eepurl.com" target="_blank" rel="noopener noreferrer">Subscribe to our email updates</a>
+          to stay informed about trail status and community actions.
         </li>
         <li>
-          <strong>TypeScript</strong> — Full type safety across all components,
-          pages, and content collections.
+          <a href="https://www.gofundme.com" target="_blank" rel="noopener noreferrer">Donate via GoFundMe</a>
+          to support our outreach and organizing efforts.
         </li>
         <li>
-          <strong>Tailwind CSS</strong> — Utility-first CSS with dark mode
-          support via the <code>class</code> strategy.
-        </li>
-        <li>
-          <strong>MDX</strong> — Write blog posts in Markdown with the option
-          to embed interactive JSX components.
-        </li>
-        <li>
-          <strong>Content Collections</strong> — Type-safe content with Zod
-          schema validation.
-        </li>
-        <li>
-          <strong>Sitemap</strong> — Auto-generated <code>sitemap.xml</code>{' '}
-          for SEO.
-        </li>
-        <li>
-          <strong>RSS</strong> — Auto-generated RSS feed at{' '}
-          <code>/rss.xml</code>.
+          <a href="https://www.facebook.com/opentrailsca" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a>
+          and share our updates with your neighbors.
         </li>
       </ul>
 
-      <h2>Deployment</h2>
+      <h2>Contact</h2>
       <p>
-        The template is pre-configured for deployment on{' '}
-        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-          Netlify
-        </a>
-        . Connect your Git repository and Netlify will automatically build and
-        deploy on every push to <code>main</code>.
+        Have a question or want to connect with us directly? Reach out through our
+        <a href="https://www.facebook.com/opentrailsca" target="_blank" rel="noopener noreferrer">Facebook page</a>.
       </p>
-      <p>
-        Security headers (X-Frame-Options, X-Content-Type-Options, CSP, etc.)
-        are configured in <code>netlify.toml</code>.
-      </p>
-
-      <h2>CMS Integration</h2>
-      <p>
-        The template includes a <code>cloudcannon.config.yml</code> for
-        <a href="https://cloudcannon.com" target="_blank" rel="noopener noreferrer">
-          CloudCannon
-        </a>
-        CMS, giving editors a visual interface to manage blog posts and pages
-        without touching the code.
-      </p>
-
-      <h2>Getting Started</h2>
-      <ol>
-        <li>Clone or fork the repository.</li>
-        <li>Run <code>npm install</code>.</li>
-        <li>Run <code>npm run dev</code> and open <code>http://localhost:4321</code>.</li>
-        <li>Edit <code>astro.config.mjs</code> and set your <code>site</code> URL.</li>
-        <li>Add blog posts to <code>src/content/blog/</code>.</li>
-        <li>Deploy to Netlify by connecting your Git repo.</li>
-      </ol>
     </div>
   </main>
 </BaseLayout>

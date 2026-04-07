@@ -8,8 +8,8 @@
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Updates' },
 ];
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -25,9 +25,14 @@ function isActive(href: string): boolean {
     <!-- Logo / site name -->
     <a
       href="/"
-      class="text-xl font-bold text-gray-900 no-underline hover:text-brand-600 dark:text-white dark:hover:text-brand-400 transition-colors"
+      class="flex items-center gap-3 no-underline group"
     >
-      Astro Template
+      <img
+        src="/images/otca-logo.png"
+        alt="OTCA logo"
+        class="h-10 w-auto object-contain"
+        height="40"
+      />
     </a>
 
     <!-- Desktop navigation -->
@@ -51,6 +56,26 @@ function isActive(href: string): boolean {
         ))}
       </ul>
     </nav>
+
+    <!-- CTA buttons -->
+    <div class="hidden sm:flex items-center gap-2">
+      <a
+        href="https://eepurl.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary text-sm py-1.5 px-3"
+      >
+        Subscribe
+      </a>
+      <a
+        href="https://www.gofundme.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary text-sm py-1.5 px-3"
+      >
+        Donate
+      </a>
+    </div>
 
     <!-- Dark mode toggle -->
     <button
