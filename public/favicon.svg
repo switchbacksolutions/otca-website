@@ -1,9 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
-  <!-- Astro-style rocket / star mark -->
-  <rect width="128" height="128" rx="24" fill="#0ea5e9"/>
+  <!-- Background: forest green -->
+  <rect width="128" height="128" rx="22" fill="#1a5c38"/>
+
+  <!-- Mountain silhouette: two peaks -->
+  <path d="M8 108 L46 36 L70 64 L90 28 L120 108 Z" fill="white"/>
+
+  <!-- Trail: orange dashes winding up the left peak -->
   <path
-    d="M64 20 L74 54 H108 L80 74 L90 108 L64 88 L38 108 L48 74 L20 54 H54 Z"
-    fill="white"
-    opacity="0.95"
+    d="M22 106 C30 94 38 84 44 74 C50 64 50 56 56 46"
+    stroke="#f97316"
+    stroke-width="5.5"
+    stroke-linecap="round"
+    stroke-dasharray="9 7"
+    fill="none"
   />
 </svg>
