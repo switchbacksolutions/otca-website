@@ -31,6 +31,7 @@ const {
 
 const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 const canonical = new URL(canonicalURL, Astro.site ?? Astro.url).href;
+import '@/styles/global.css';
 ---
 
 <!-- Charset & viewport -->
@@ -70,5 +71,3 @@ const canonical = new URL(canonicalURL, Astro.site ?? Astro.url).href;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.site ?? Astro.url).href} />
 
-<!-- Global stylesheet -->
-<link rel="stylesheet" href="/src/styles/global.css" />
